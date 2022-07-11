@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Form!{% endblock %}
+
+{% block body %}
+    <h1 align="center">Student Update Form</h1>
+    {{ form_start(form) }}
+    <div class="container">
+
+        <div class="from-group">
+            {{ form_label(form.StudentType) }}
+
+            {{ form_widget(form.StudentType,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+        <div class="from-group">
+            {{ form_label(form.username) }}
+
+            {{ form_widget(form.username,{'attr':{'class':'form-control'}}) }}
+
+
+        </div>
+        <div class="from-group">
+            {{ form_label(form.email) }}
+
+            {{ form_widget(form.email,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+        <div class="from-group">
+            {{ form_label(form.city) }}
+
+            {{ form_widget(form.city,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+
+        <div class="from-group">
+            {{ form_label(form.country) }}
+
+            {{ form_widget(form.country,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+
+        <div class="from-group">
+            {{ form_label(form.course) }}
+
+            {{ form_widget(form.course,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+
+        <div class="from-group ">
+            <button class="btn btn-primary md-3">update</button>
+
+
+        </div>
+
+
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

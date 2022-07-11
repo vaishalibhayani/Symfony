@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Form!{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    <div class="container">
+
+        <div class="from-group">
+            {{ form_label(form.title) }}
+
+            {{ form_widget(form.title,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+        <div class="from-group">
+            {{ form_label(form.content) }}
+
+            {{ form_widget(form.content,{'attr':{'class':'form-control'}}) }}
+
+
+        </div>
+
+        <div class="from-group">
+            <button class="btn btn-primary md-3">Update</button>
+
+
+        </div>
+
+
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

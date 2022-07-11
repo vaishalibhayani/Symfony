@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StudentController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+<div class="container">
+    <h1 align="center">Manage student form</h1>
+
+    <table class="table">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Student Type</th>
+            <th scope="col">Username</th>
+            <th scope="col">email</th>
+            <th scope="col">City</th>
+            <th scope="col">Country</th>
+            <th scope="col">Course</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        {% for lists in list %}
+        <tbody>
+        <tr>
+            <th scope="row">{{ lists.id }}</th>
+            <td>{{ lists.StudentType }}</td>
+            <td>{{ lists.username }}</td>
+            <td>{{ lists.email }}</td>
+            <td>{{ lists.city }}</td>
+            <td>{{ lists.country }}</td>
+            <td>{{ lists.course }}</td>
+
+            <td>
+                <a href="{{ path('supdate' ,{id:lists.id}) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ path('sdelete' ,{id:lists.id}) }}" class="btn btn-danger">Delete</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
